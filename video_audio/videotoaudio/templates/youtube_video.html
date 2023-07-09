@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube video download</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .navbar {
+            background-color: #FF0000;
+            color: white;
+            padding: 10px;
+        }
+        
+        .navbar h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+            text-align: center;
+        }
+       
+        
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #F2F2F2; /* Changed popup box color */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px; /* Adjusted maximum width */
+            width: 100%; /* Added width to make it responsive */
+            box-sizing: border-box; /* Include padding in the width calculation */
+        }
+        
+        .popup h1 {
+            text-align: center;
+        }
+        
+        .popup form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .popup input[type="text"] {
+            width: 100%; /* Adjusted width to fill the container */
+            max-width: 300px; /* Added maximum width */
+            height: 30px; /* Adjusted height */
+            padding: 8px; /* Adjusted padding */
+            font-size: 14px; /* Adjusted font size */
+            border-radius: 4px; /* Adjusted border radius */
+        }
+        
+        .popup button[type="submit"] {
+            width: 100%; /* Adjusted width to fill the container */
+            max-width: 300px; /* Added maximum width */
+            height: 40px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        #loader {
+            display: none;
+            margin-top: 20px;
+            color: white;
+            font-weight: bold;
+        }
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+            
+            input[type="text"] {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            button[type="submit"] {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #F2F2F2;
+                padding: 20px;
+            }
+            
+            .card {
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .card h1 {
+                text-align: center;
+            }
+            
+            .card p {
+                text-align: center;
+                margin-top: 10px;
+            }
+            
+            .card button {
+                display: block;
+                margin: 20px auto 0;
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #FF0000;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Download YouTube Video</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h1>Fast Downloading</h1>
+            <p>Download YouTube shorts videos with ultra-fast speed. We do not limit speed for downloading videos.</p>
+            
+        </div>
+        
+        <div class="card">
+            <h1>No Limit</h1>
+            <p>Download as many videos as you want to download. Enjoy our service.</p>
+            
+        </div>
+        
+        <div class="card">
+            <h1>Fully Secure</h1>
+            <p>YouTube Video Download website is 100% secure. It has an active SSL certificate that ensures all data is encrypted while in transit.</p>
+            
+        </div>
+        
+        <div class="card">
+            <h1>Quality</h1>
+            <p>Here only highest available video Quality on YouTube is downloaded.</p>
+            
+        </div>
+        
+        <div class="card">
+            <h1>User-Friendly</h1>
+            <p>Our website is specially designed for mobile users. Fully user-friendly website to make your work even easier.</p>
+            
+        </div>
+        
+        <div class="card">
+            <h1>Free to Use</h1>
+            <p>Yes, it is completely free and easy to use. All you need is a good internet connection.</p>
+            
+        </div>
+        <div class="card">
+            <h1>Download</h1>
+            <p>You no need to do anything to download the video after link is uploaded it will automatically save to your files</p>
+            
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="popup">
+            <h1>Download YouTube Video</h1>
+
+            <form id="download-form" method="post">
+                {% csrf_token %}
+                <input type="text" name="youtube_link" placeholder="Enter YouTube URL" required>
+                <br>
+                <button type="submit">Get Video</button>
+            </form>
+            
+    
+</body>
+</html>
